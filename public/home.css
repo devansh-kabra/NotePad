@@ -1,0 +1,116 @@
+
+
+body {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+body div {text-align: center;}
+
+#home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+#head-text {
+    margin-top: 2.5rem;
+}
+
+/**text design**/
+h1, h2, h3, h4 {
+    margin: 0px;
+    color: white;   
+}
+
+h1 {
+    font-family: "Cormorant Garamond", sans-serif;
+    font-size: 5rem;
+}
+
+h2, h3, h4 {font-family: "Anonymous Pro", sans-serif;}
+h2, h4 {font-size: 1.15rem;}
+
+
+a {
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+    font-size: 1.25rem;
+    font-family: "Anonymous Pro", sans-serif;
+    margin: 0.33rem;
+}
+/**text-design end**/
+
+/** center buttons editing**/
+.four-btn-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    margin-block: auto;
+    gap: 7rem;
+}
+
+.four-btn-layout > div{
+    cursor: pointer;
+}   
+
+#credit {
+    margin-top: auto;
+    margin-bottom: 2vh;
+}
+
+
+
+/***all-posts section**/
+#all-posts {
+    height: 100vh;
+    position: relative;
+}
+
+.menu {
+    position: absolute;
+    right: 1.5rem;
+    top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+button {
+    background-color: #fefefe;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.25rem;
+    border-radius: 50%;
+    font-weight: 900;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 200,
+  'GRAD' 0,
+  'opsz' 24;
+  color: white;
+  font-size: 4.5rem;
+}
+
+button > span.material-symbols-outlined {
+    font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24;
+  color: black;
+  font-size: 2rem;
+}

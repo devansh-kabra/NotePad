@@ -1,0 +1,49 @@
+<%- include("partials/header.ejs", {heading: "User Profile", css:"/user.css"}); %>
+<body>
+    <div>
+        <div id="head-text">
+            <h1>User Profile</h1>
+            <h2>Click on item to change</h2>
+        </div>
+        <div class="menu">
+            <button onclick="location.href = '/'" title="Home">
+                <span class="material-symbols-outlined">home</span>
+            </button>
+            <button onclick="location.href = '/newpost'" title="New Post">
+                <span class="material-symbols-outlined">add</span>
+            </button>
+        </div>
+        <div class="four-btn-layout">
+            <div id="name">
+                <span class="material-symbols-outlined">id_card</span>
+                <h3>Name<br/><%=name%></h3>
+                <form method="POST" action="/user" class="hide">
+                    <input type="text" placeholder="Name" autofocus name="newName">
+                    <button type="submit" class="save-btn">SAVE</button>
+                </form>
+            </div>
+            <div id="age">
+                <span class="material-symbols-outlined">18_up_rating</span>
+                <h3>Age<br/><%=age%></h3>
+                <form method="POST" action="/user" class="hide">
+                    <input type="number" placeholder="Age" autofocus name="newAge" min="1" max="150">
+                    <button type="submit" class="save-btn">SAVE</button>
+                </form>
+            </div>
+            <div id=location>
+                <span class="material-symbols-outlined">globe_location_pin</span>
+                <h3>Location<br/><%=location%></h3>
+                <form method="POST" action="/user" class="hide">
+                    <input type="text" placeholder="Name" autofocus name="newLocation">
+                    <button type="submit" class="save-btn">SAVE</button>
+                </form>
+            </div>
+            <div onclick="location.href = '/newpost'">
+                <span class="material-symbols-outlined">event_note</span>
+                <h3>Number of Notes<br/><%= num%></h3>
+            </div>
+        </div>
+    </div>
+
+    <script src="user.js"></script>
+</body>

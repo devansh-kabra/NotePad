@@ -1,0 +1,26 @@
+<%- include("partials/header.ejs", {heading: "New Post", css: "/newpost.css"});%>
+<body>
+    <div>
+        <div class="menu">
+            <button onclick="location.href = '/'" title="Home">
+                <span class="material-symbols-outlined">home</span>
+            </button>
+            <button onclick="empty()" title="Clear">
+                <span class="material-symbols-outlined">backspace</span>
+            </button>
+        </div>
+        <form action="/create-blog" method="POST">
+            <input type="text" id="title" name="title" required placeholder="Title" autofocus>
+            <textarea id="content" name="content" required placeholder="Start Typing Here" rows="20"></textarea>
+            <button type="submit" id="submit-btn">SAVE</button>
+        </form>
+    </div>
+
+    <script>
+        function empty() {
+            document.querySelector("input").value = '';
+            document.querySelector("textarea").value = '';
+            document.querySelector("input").focus();
+        }
+    </script>
+</body>

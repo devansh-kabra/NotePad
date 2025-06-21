@@ -1,0 +1,64 @@
+<%- include('partials/header.ejs', {heading: "NotePad", css: "/home.css"}) %>
+<body>
+    <section id="home">
+        <div id="head-text">
+            <h1>NotePad</h1>
+            <h2>Write a Quick Note</h2>
+        </div>
+        <div class="four-btn-layout">
+            <div onclick="location.href = '/newpost'">
+                <span class="material-symbols-outlined">edit</span>
+                <h3>New Note</h3>
+            </div>
+            <div onclick="location.href = '/posts/<%=data.length-1%>'">
+                <span class="material-symbols-outlined">update</span>
+                <h3>Latest Note</h3>
+            </div>
+            <div onclick="location.href = '/user'">
+                <span class="material-symbols-outlined">person</span>
+                <h3>User Profile</h3>
+            </div>
+            <div onclick="document.getElementById('all-posts').scrollIntoView({ behavior: 'smooth' })">
+                <span class="material-symbols-outlined">article</span>
+                <h3>All Notes</h3>
+            </div>
+        </div>
+        <div id="credit"><h4>CREATED BY DK</h4></div>
+    </section>
+
+    <section id="all-posts">
+        <div id="head-text">
+            <h1>All Notes</h1>
+        </div>
+        <div class="menu">
+            <button onclick="document.getElementById('home').scrollIntoView({behavior: 'smooth'})" title="Home">
+                <span class="material-symbols-outlined">home</span>
+            </button>
+            <button onclick="location.href = '/newpost'" title="New Post">
+                <span class="material-symbols-outlined">add</span>
+            </button>
+        </div>
+        <div>
+            <%for (let i=0; i < data.length; i++) { %>
+                    <a href='/posts/<%=i%>'>
+                        <%=data[i].title%>
+                    </a>
+                    <br/>
+                <% } %>
+        </div>
+    </section>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const tgt = params.get("goto");
+
+        if (tgt) {
+            const pos = document.getElementById(tgt);
+            if (pos) {
+                pos.scrollIntoView({behavior: "auto"});
+                history.replaceState(null, "", "/");
+            }
+        }
+
+    </script>
+</body>

@@ -1,0 +1,33 @@
+<%- include("partials/header.ejs", {heading: blog.title, css: "/show-post.css"});%>
+<body id="post">
+    <div>
+        <h1><%=blog.title%></h1>
+        <div class="menu">
+            <button onclick="location.href = '/'" title="Home">
+                <span class="material-symbols-outlined">home</span>
+            </button>
+            <button onclick="location.href = '/?goto=all-posts'" title="Back">
+                <span class="material-symbols-outlined">keyboard_arrow_left</span>
+            </button>
+            <button title="Edit" onclick="location.href = '/editpost/<%=id%>'">
+                <span class="material-symbols-outlined">edit_note</span>
+            </button>
+            <button title="Delete" onclick="deletePost('<%=id%>')">
+                <span class="material-symbols-outlined">delete</span>
+            </button>
+        </div>
+        <p><%=blog.content%></p>
+    </div>
+
+    <script>
+        async function deletePost(id) {
+            const res = await fetch(`/posts/${id}`, {method: 'DELETE'});
+            if (res.ok) {
+                location.href = '/?goto=all-posts';
+            } else {
+                alert("Delete Failed Due to Unknown Reasons!")
+            }
+        }
+    </script>
+
+</body>
