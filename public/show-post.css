@@ -1,3 +1,7 @@
+html {
+    font-size: clamp(10px, 1vw + 8px, 16px);
+}
+
 body {
     background-color: black;
     display: flex;
@@ -61,4 +65,18 @@ button > span.material-symbols-outlined {
   'opsz' 24;
   color: black;
   font-size: 2rem;
+}
+
+@media (max-width: 480px) { 
+    body > div {
+        padding: 0;
+        width: 100vw;
+    }
+
+    .menu {
+        position: static;
+        width: 100vw;
+        flex-direction: row;
+        margin-top: 1rem;
+    }
 }

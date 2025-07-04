@@ -1,3 +1,8 @@
+html {
+    font-size: clamp(10px, 1vw + 8px, 16px);
+}
+
+
 body {
     background-color: black;
     height: 90vh;
@@ -15,7 +20,6 @@ body > div {
     flex-direction: column;
     align-items: center;
     position: relative;
-    justify-content: center;
 }
 
 form {
@@ -46,6 +50,7 @@ textarea {
     width: 80vw;
     color: white;
     border: 0px;
+    height: 60vh;
 }
 
 #submit-btn {
@@ -88,4 +93,13 @@ button > span.material-symbols-outlined {
   'opsz' 24;
   color: black;
   font-size: 2rem;
+}
+
+@media (max-width: 480px) {
+    .menu {
+        position: static;
+        width: 100vw;
+        flex-direction: row;
+        margin-top: 1rem;
+    }
 }

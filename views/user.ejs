@@ -1,10 +1,6 @@
 <%- include("partials/header.ejs", {heading: "User Profile", css:"/user.css"}); %>
 <body>
     <div>
-        <div id="head-text">
-            <h1>User Profile</h1>
-            <h2>Click on item to change</h2>
-        </div>
         <div class="menu">
             <button onclick="location.href = '/'" title="Home">
                 <span class="material-symbols-outlined">home</span>
@@ -12,6 +8,10 @@
             <button onclick="location.href = '/newpost'" title="New Post">
                 <span class="material-symbols-outlined">add</span>
             </button>
+        </div>
+        <div id="head-text">
+            <h1>User Profile</h1>
+            <h2>Click on item to change</h2>
         </div>
         <div class="four-btn-layout">
             <div id="name">

@@ -1,3 +1,7 @@
+html {
+    font-size: clamp(10px, 1vw + 8px, 16px);
+}
+
 body {
     background-color: black;
     display: flex;
@@ -11,6 +15,7 @@ body > div {
     flex-direction: column;
     height: 100vh;
     align-items: center;
+    overflow-y: hidden;
 }
 
 body div {text-align: center;}
@@ -131,4 +136,29 @@ input::placeholder {color: white;}
     border-radius: 10%;
     width: auto;
     height: auto;
+}
+
+@media (max-width: 480px) {
+
+    body > div {
+        width: 100%;
+    }
+
+    .four-btn-layout {
+        display: flex;
+        flex-direction: column;
+        gap: 5.5rem;
+    }  
+
+    .menu {
+        position: static;
+        width: 100%;
+        flex-direction: row;
+        margin-top: 1rem;
+        align-self: flex-start;
+    }
+
+    #head-text {
+        margin-top: 0;
+    }
 }

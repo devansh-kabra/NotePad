@@ -1,7 +1,6 @@
 <%- include("partials/header.ejs", {heading: blog.title, css: "/show-post.css"});%>
 <body id="post">
     <div>
-        <h1><%=blog.title%></h1>
         <div class="menu">
             <button onclick="location.href = '/'" title="Home">
                 <span class="material-symbols-outlined">home</span>
@@ -16,6 +15,7 @@
                 <span class="material-symbols-outlined">delete</span>
             </button>
         </div>
+        <h1><%=blog.title%></h1>
         <p><%=blog.content%></p>
     </div>
 

@@ -1,4 +1,6 @@
-
+html {
+    font-size: clamp(10px, 1vw + 8px, 16px);
+}
 
 body {
     background-color: black;
@@ -67,7 +69,7 @@ a {
 
 /***all-posts section**/
 #all-posts {
-    height: 100vh;
+    min-height: 100vh;
     position: relative;
 }
 
@@ -113,4 +115,23 @@ button > span.material-symbols-outlined {
   'opsz' 24;
   color: black;
   font-size: 2rem;
+}
+
+@media (max-width: 480px) {
+
+    .four-btn-layout {
+        display: flex;
+        flex-direction: column;
+    }  
+
+    .menu {
+        position: static;
+        width: 100vw;
+        flex-direction: row;
+        margin-top: 2rem;
+    }
+
+    #head-text {
+        margin-top: 0;
+    }
 }
